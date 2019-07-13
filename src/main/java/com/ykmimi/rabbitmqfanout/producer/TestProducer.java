@@ -23,9 +23,9 @@ public class TestProducer {
         Connection connection = factory.newConnection();
         //创建一个通道
         Channel channel = connection.createChannel();
-
+        //声明要使用的交换机类型
         channel.exchangeDeclare(EXCHANGE_NAME,"fanout");
-
+        //产生消息
         for(int i=0; i<100;i++){
             String message = "direct 消息"+i;
             //发送消息到队列中
